@@ -14,6 +14,16 @@
 		9FEC7441295431B0008C4CC4 /* SignatureBiometricSwiftExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7440295431B0008C4CC4 /* SignatureBiometricSwiftExampleTests.swift */; };
 		9FEC744B295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC744A295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITests.swift */; };
 		9FEC744D295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC744C295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITestsLaunchTests.swift */; };
+		9FEC745C2954352B008C4CC4 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC745B2954352B008C4CC4 /* KeychainManager.swift */; };
+		9FEC745E2954353D008C4CC4 /* KeychainAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC745D2954353D008C4CC4 /* KeychainAccessManager.swift */; };
+		9FEC74612954357A008C4CC4 /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC74602954357A008C4CC4 /* KeyManager.swift */; };
+		9FEC7463295435C4008C4CC4 /* KeyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7462295435C4008C4CC4 /* KeyConfig.swift */; };
+		9FEC746529543637008C4CC4 /* KeyPairManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC746429543637008C4CC4 /* KeyPairManager.swift */; };
+		9FEC7468295438FE008C4CC4 /* SignatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7467295438FE008C4CC4 /* SignatureManager.swift */; };
+		9FEC746A295439EA008C4CC4 /* BiometricSignatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7469295439EA008C4CC4 /* BiometricSignatureManager.swift */; };
+		9FEC746D29543AB4008C4CC4 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC746C29543AB4008C4CC4 /* DispatchQueue+Extension.swift */; };
+		9FEC746F29544904008C4CC4 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC746E29544904008C4CC4 /* Data+Extensions.swift */; };
+		9FEC747129545051008C4CC4 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC747029545051008C4CC4 /* KeyPair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,16 @@
 		9FEC7446295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignatureBiometricSwiftExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FEC744A295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBiometricSwiftExampleUITests.swift; sourceTree = "<group>"; };
 		9FEC744C295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBiometricSwiftExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9FEC745B2954352B008C4CC4 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		9FEC745D2954353D008C4CC4 /* KeychainAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessManager.swift; sourceTree = "<group>"; };
+		9FEC74602954357A008C4CC4 /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
+		9FEC7462295435C4008C4CC4 /* KeyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConfig.swift; sourceTree = "<group>"; };
+		9FEC746429543637008C4CC4 /* KeyPairManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairManager.swift; sourceTree = "<group>"; };
+		9FEC7467295438FE008C4CC4 /* SignatureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureManager.swift; sourceTree = "<group>"; };
+		9FEC7469295439EA008C4CC4 /* BiometricSignatureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricSignatureManager.swift; sourceTree = "<group>"; };
+		9FEC746C29543AB4008C4CC4 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
+		9FEC746E29544904008C4CC4 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		9FEC747029545051008C4CC4 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +114,10 @@
 		9FEC742E295431AE008C4CC4 /* SignatureBiometricSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				9FEC746B29543A9B008C4CC4 /* Extensions */,
+				9FEC7466295438F0008C4CC4 /* Signature */,
+				9FEC745F29543569008C4CC4 /* KeyPair */,
+				9FEC745A2954350F008C4CC4 /* Keychain */,
 				9FEC742F295431AE008C4CC4 /* SignatureBiometricSwiftExampleApp.swift */,
 				9FEC7431295431AE008C4CC4 /* ContentView.swift */,
 				9FEC7433295431AF008C4CC4 /* Assets.xcassets */,
@@ -125,6 +149,44 @@
 				9FEC744C295431B0008C4CC4 /* SignatureBiometricSwiftExampleUITestsLaunchTests.swift */,
 			);
 			path = SignatureBiometricSwiftExampleUITests;
+			sourceTree = "<group>";
+		};
+		9FEC745A2954350F008C4CC4 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				9FEC745B2954352B008C4CC4 /* KeychainManager.swift */,
+				9FEC745D2954353D008C4CC4 /* KeychainAccessManager.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		9FEC745F29543569008C4CC4 /* KeyPair */ = {
+			isa = PBXGroup;
+			children = (
+				9FEC74602954357A008C4CC4 /* KeyManager.swift */,
+				9FEC7462295435C4008C4CC4 /* KeyConfig.swift */,
+				9FEC746429543637008C4CC4 /* KeyPairManager.swift */,
+				9FEC747029545051008C4CC4 /* KeyPair.swift */,
+			);
+			path = KeyPair;
+			sourceTree = "<group>";
+		};
+		9FEC7466295438F0008C4CC4 /* Signature */ = {
+			isa = PBXGroup;
+			children = (
+				9FEC7467295438FE008C4CC4 /* SignatureManager.swift */,
+				9FEC7469295439EA008C4CC4 /* BiometricSignatureManager.swift */,
+			);
+			path = Signature;
+			sourceTree = "<group>";
+		};
+		9FEC746B29543A9B008C4CC4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9FEC746C29543AB4008C4CC4 /* DispatchQueue+Extension.swift */,
+				9FEC746E29544904008C4CC4 /* Data+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +320,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FEC7432295431AE008C4CC4 /* ContentView.swift in Sources */,
+				9FEC746D29543AB4008C4CC4 /* DispatchQueue+Extension.swift in Sources */,
+				9FEC745C2954352B008C4CC4 /* KeychainManager.swift in Sources */,
 				9FEC7430295431AE008C4CC4 /* SignatureBiometricSwiftExampleApp.swift in Sources */,
+				9FEC746A295439EA008C4CC4 /* BiometricSignatureManager.swift in Sources */,
+				9FEC7463295435C4008C4CC4 /* KeyConfig.swift in Sources */,
+				9FEC74612954357A008C4CC4 /* KeyManager.swift in Sources */,
+				9FEC745E2954353D008C4CC4 /* KeychainAccessManager.swift in Sources */,
+				9FEC746F29544904008C4CC4 /* Data+Extensions.swift in Sources */,
+				9FEC747129545051008C4CC4 /* KeyPair.swift in Sources */,
+				9FEC7468295438FE008C4CC4 /* SignatureManager.swift in Sources */,
+				9FEC746529543637008C4CC4 /* KeyPairManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +492,7 @@
 				DEVELOPMENT_TEAM = 3ATXW43MG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(MARKETING_VERSION)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +522,7 @@
 				DEVELOPMENT_TEAM = 3ATXW43MG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(MARKETING_VERSION)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
