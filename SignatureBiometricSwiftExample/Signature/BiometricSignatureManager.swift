@@ -71,7 +71,7 @@ class BiometricSignatureManager : SignatureManager {
             return false
         }
         
-        guard let publicKey = key?.publickKey else {
+        guard let publicKey = key?.publicKey else {
             print("Can't get public key")
             return false
         }

@@ -10,5 +10,5 @@ import CommonCrypto
 
 struct KeyPair {
     let privateKey: SecKey?
-    let publickKey: SecKey?
+    let publicKey: SecKey?
 }

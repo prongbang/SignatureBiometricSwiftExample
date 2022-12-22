@@ -39,6 +39,13 @@ struct ContentView: View {
             keyConfig: keyConfig
         )
         
+        let keyPair = keyPairManager.getOrCreate(keyConfig: keyConfig)
+        let pk = keyPair?.publicKey?.toBase64Pretty()
+        let pemString = keyPair?.publicKey?.toPem()
+        print("pk: \(pk)") // MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeRx7Mqq0N+HVxnVpqJugHxC69iDhsQF8erFV8TbBPkk9NP6p7H0ren2C/rsdzibIpRouirNJqNoHvfNOhDvc2A==
+        print("pemString: \(pemString)")
+        
+        
         let clearText = "Hello"
         let signature = signatureManager.sign(message: clearText) ?? ""
         

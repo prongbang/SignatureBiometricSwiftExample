@@ -30,7 +30,7 @@ class KeychainAccessManager : KeychainManager {
             return nil
         }
         
-        return KeyPair(privateKey: privateKey, publickKey: publicKey)
+        return KeyPair(privateKey: privateKey, publicKey: publicKey)
     }
     
     func removeKey(name: String) {
@@ -84,7 +84,7 @@ class KeychainAccessManager : KeychainManager {
             throw error!.takeRetainedValue() as Error
         }
         
-        return KeyPair(privateKey: privateKey, publickKey: publicKey)
+        return KeyPair(privateKey: privateKey, publicKey: publicKey)
     }
     
 }
