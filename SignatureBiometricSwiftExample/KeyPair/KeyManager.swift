@@ -8,6 +8,6 @@
 import Foundation
 
 protocol KeyManager {
-    func create(keyConfig: KeyConfig) -> KeyPair?
-    func getOrCreate(keyConfig: KeyConfig) -> KeyPair?
+    func create() -> KeyPair?
+    func getOrCreate() -> KeyPair?
 }

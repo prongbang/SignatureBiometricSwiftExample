@@ -27,7 +27,7 @@ class BiometricSignatureManager : SignatureManager {
     
     func sign(algorithm: SecKeyAlgorithm, data: Data) -> String? {
         
-        let key = keyManager.getOrCreate(keyConfig: keyConfig)
+        let key = keyManager.getOrCreate()
         guard key != nil else {
             return nil
         }
@@ -62,7 +62,7 @@ class BiometricSignatureManager : SignatureManager {
     
     func verify(message: String, signature: String) -> Bool {
         
-        let key = keyManager.getOrCreate(keyConfig: keyConfig)
+        let key = keyManager.getOrCreate()
         guard key != nil else {
             return false
         }

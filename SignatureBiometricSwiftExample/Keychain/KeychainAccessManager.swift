@@ -48,11 +48,9 @@ class KeychainAccessManager : KeychainManager {
         
         let flags: SecAccessControlCreateFlags
         if #available(iOS 11.3, *) {
-            flags = true ?
-            [.privateKeyUsage, .biometryCurrentSet] : .privateKeyUsage
+            flags = [.privateKeyUsage, .biometryCurrentSet]
         } else {
-            flags = true ?
-            [.privateKeyUsage, .touchIDCurrentSet] : .privateKeyUsage
+            flags = [.privateKeyUsage, .touchIDCurrentSet]
         }
         let access = SecAccessControlCreateWithFlags(
             kCFAllocatorDefault,

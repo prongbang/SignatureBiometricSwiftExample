@@ -11,15 +11,16 @@ import CommonCrypto
 class KeyPairManager : KeyManager {
     
     private let keychainManager: KeychainManager
-    
+    private let keyConfig: KeyConfig
     private var keyPair: KeyPair?
     
-    public init(keychainManager: KeychainManager) {
+    public init(keyConfig: KeyConfig, keychainManager: KeychainManager) {
+        self.keyConfig = keyConfig
         self.keychainManager = keychainManager
     }
     
-    func create(keyConfig: KeyConfig) -> KeyPair? {
-        var key = keychainManager.loadKey(name: keyConfig.name)
+    func create() -> KeyPair? {
+        let key = keychainManager.loadKey(name: keyConfig.name)
         guard key == nil else {
             return key
         }
@@ -34,12 +35,12 @@ class KeyPairManager : KeyManager {
         return nil
     }
     
-    func getOrCreate(keyConfig: KeyConfig) -> KeyPair? {
+    func getOrCreate() -> KeyPair? {
         guard keyPair == nil else {
             return keyPair
         }
         
-        keyPair = self.create(keyConfig: keyConfig)
+        keyPair = self.create()
         guard keyPair != nil else {
             print("Can't create key pair")
             return nil

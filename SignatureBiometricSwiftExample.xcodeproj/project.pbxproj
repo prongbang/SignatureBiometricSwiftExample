@@ -25,6 +25,9 @@
 		9FEC746F29544904008C4CC4 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC746E29544904008C4CC4 /* Data+Extensions.swift */; };
 		9FEC747129545051008C4CC4 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC747029545051008C4CC4 /* KeyPair.swift */; };
 		9FEC747329546AEC008C4CC4 /* SecKey+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC747229546AEC008C4CC4 /* SecKey+Extension.swift */; };
+		9FEC7475295549AE008C4CC4 /* SignatureBiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7474295549AE008C4CC4 /* SignatureBiometricManager.swift */; };
+		9FEC7477295549EE008C4CC4 /* LocalSignatureBiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7476295549EE008C4CC4 /* LocalSignatureBiometricManager.swift */; };
+		9FEC747929556D61008C4CC4 /* KeyPairResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC747829556D61008C4CC4 /* KeyPairResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		9FEC746E29544904008C4CC4 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		9FEC747029545051008C4CC4 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
 		9FEC747229546AEC008C4CC4 /* SecKey+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecKey+Extension.swift"; sourceTree = "<group>"; };
+		9FEC7474295549AE008C4CC4 /* SignatureBiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBiometricManager.swift; sourceTree = "<group>"; };
+		9FEC7476295549EE008C4CC4 /* LocalSignatureBiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSignatureBiometricManager.swift; sourceTree = "<group>"; };
+		9FEC747829556D61008C4CC4 /* KeyPairResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 		9FEC742E295431AE008C4CC4 /* SignatureBiometricSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				9FEC7476295549EE008C4CC4 /* LocalSignatureBiometricManager.swift */,
+				9FEC7474295549AE008C4CC4 /* SignatureBiometricManager.swift */,
 				9FEC746B29543A9B008C4CC4 /* Extensions */,
 				9FEC7466295438F0008C4CC4 /* Signature */,
 				9FEC745F29543569008C4CC4 /* KeyPair */,
@@ -169,6 +177,7 @@
 				9FEC7462295435C4008C4CC4 /* KeyConfig.swift */,
 				9FEC746429543637008C4CC4 /* KeyPairManager.swift */,
 				9FEC747029545051008C4CC4 /* KeyPair.swift */,
+				9FEC747829556D61008C4CC4 /* KeyPairResult.swift */,
 			);
 			path = KeyPair;
 			sourceTree = "<group>";
@@ -324,13 +333,16 @@
 			files = (
 				9FEC7432295431AE008C4CC4 /* ContentView.swift in Sources */,
 				9FEC746D29543AB4008C4CC4 /* DispatchQueue+Extension.swift in Sources */,
+				9FEC747929556D61008C4CC4 /* KeyPairResult.swift in Sources */,
 				9FEC745C2954352B008C4CC4 /* KeychainManager.swift in Sources */,
+				9FEC7477295549EE008C4CC4 /* LocalSignatureBiometricManager.swift in Sources */,
 				9FEC7430295431AE008C4CC4 /* SignatureBiometricSwiftExampleApp.swift in Sources */,
 				9FEC746A295439EA008C4CC4 /* BiometricSignatureManager.swift in Sources */,
 				9FEC7463295435C4008C4CC4 /* KeyConfig.swift in Sources */,
 				9FEC747329546AEC008C4CC4 /* SecKey+Extension.swift in Sources */,
 				9FEC74612954357A008C4CC4 /* KeyManager.swift in Sources */,
 				9FEC745E2954353D008C4CC4 /* KeychainAccessManager.swift in Sources */,
+				9FEC7475295549AE008C4CC4 /* SignatureBiometricManager.swift in Sources */,
 				9FEC746F29544904008C4CC4 /* Data+Extensions.swift in Sources */,
 				9FEC747129545051008C4CC4 /* KeyPair.swift in Sources */,
 				9FEC7468295438FE008C4CC4 /* SignatureManager.swift in Sources */,

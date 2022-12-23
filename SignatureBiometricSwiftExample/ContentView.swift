@@ -13,51 +13,57 @@ struct ContentView: View {
     
     @State var signed = ""
     @State var verify = ""
+    @State var publicKey = ""
+    
+    private let signatureBiometricManager = LocalSignatureBiometricManager.newInstance(
+        keyConfig: KeyConfig(name: "com.krungsri.wemerchant.kSecAccKey")
+    )
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("PublicKey: \(publicKey)")
+            Button("Create KeyPair", action: {
+                createKeyPair()
+            })
+            Button("Sign & Verify", action: {
+                signAndVerify()
+            })
             Text("Signature: \(signed)")
             Text("Verify: \(verify)")
         }
         .padding()
-        .onAppear {
-            signature()
+    }
+    
+    func createKeyPair() {
+        let reason = "Please scan your fingerprint (or face) to authenticate"
+        signatureBiometricManager.createKeyPair(reason: reason) { result in
+            // EX: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeRx7Mqq0N+HVxnVpqJugHxC69iDhsQF8erFV8TbBPkk9NP6p7H0ren2C/rsdzibIpRouirNJqNoHvfNOhDvc2A==
+            if result.status == "success" {
+                self.publicKey = result.publicKey ?? ""
+            } else {
+                print("Error: \(result.status)")
+            }
         }
     }
     
-    func signature() {
-        
-        let keyConfig = KeyConfig(name: "com.krungsri.wemerchant.kSecAccKey")
-        let keychainManager = KeychainAccessManager()
-        let keyPairManager = KeyPairManager(keychainManager: keychainManager)
-        let signatureManager = BiometricSignatureManager(
-            keyManager: keyPairManager,
-            keyConfig: keyConfig
-        )
-        
-        let keyPair = keyPairManager.getOrCreate(keyConfig: keyConfig)
-        let pk = keyPair?.publicKey?.toBase64Pretty()
-        let pemString = keyPair?.publicKey?.toPem()
-        print("pk: \(pk)") // MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeRx7Mqq0N+HVxnVpqJugHxC69iDhsQF8erFV8TbBPkk9NP6p7H0ren2C/rsdzibIpRouirNJqNoHvfNOhDvc2A==
-        print("pemString: \(pemString)")
-        
+    func signAndVerify() {
         
         let clearText = "Hello"
-        let signature = signatureManager.sign(message: clearText) ?? ""
+        signatureBiometricManager.sign(payload: clearText) { signature in
+            self.signed = signature ?? ""
+            print("signature: \(String(describing: signature))")
+        }
         
-        self.signed = signature
         
-        print("signature: \(signature)")
+        signatureBiometricManager.verify(payload: clearText, signature: signed) { verified in
+            self.verify = "\(verified)"
+            
+            print("verify: \(verified)")
+        }
         
-        let verify = signatureManager.verify(message: clearText, signature: signature)
-        
-        self.verify = "\(verify)"
-        
-        print("verify: \(verify)")
     }
 }
 
