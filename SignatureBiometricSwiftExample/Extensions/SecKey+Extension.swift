@@ -9,8 +9,8 @@ import Foundation
 
 extension SecKey {
     
-    func toBase64Pretty() -> String? {
-        guard let b64 = toBase64() else {
+    func toBase64() -> String? {
+        guard let b64 = toBase64Default() else {
             return nil
         }
         
@@ -19,7 +19,7 @@ extension SecKey {
             .replacingOccurrences(of: "\n", with: "")
     }
     
-    func toBase64() -> String? {
+    func toBase64Default() -> String? {
         var error: Unmanaged<CFError>?
         let cfdata = SecKeyCopyExternalRepresentation(self, &error)
         if cfdata == nil {
@@ -42,7 +42,7 @@ extension SecKey {
     }
     
     func toPem() -> String? {
-        guard let b64 = toBase64() else {
+        guard let b64 = toBase64Default() else {
             return nil
         }
         return "-----BEGIN PUBLIC KEY-----\r\n\(b64)\r\n-----END PUBLIC KEY-----\r\n"

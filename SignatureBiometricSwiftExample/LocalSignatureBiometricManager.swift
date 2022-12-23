@@ -31,7 +31,7 @@ class LocalSignatureBiometricManager : SignatureBiometricManager {
                 if (success) {
                     
                     let keyPair = self.keyPairManager.getOrCreate()
-                    let pk = keyPair?.publicKey?.toBase64Pretty()
+                    let pk = keyPair?.publicKey?.toBase64()
                     
                     result(KeyPairResult(publicKey: pk, status: "success"))
                     
