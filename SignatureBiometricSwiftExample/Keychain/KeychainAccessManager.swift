@@ -46,8 +46,10 @@ class KeychainAccessManager : KeychainManager {
     func makeAndStoreKey(name: String) throws -> KeyPair {
         removeKey(name: name)
         
+        var aclError: Unmanaged<CFError>?
         let flags: SecAccessControlCreateFlags
         if #available(iOS 11.3, *) {
+            // .privateKeyUsage is specifically for creating keypairs that are stored in the Secure Enclave.
             flags = [.privateKeyUsage, .biometryCurrentSet]
         } else {
             flags = [.privateKeyUsage, .touchIDCurrentSet]
@@ -56,8 +58,11 @@ class KeychainAccessManager : KeychainManager {
             kCFAllocatorDefault,
             kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
             flags,
-            nil
+            &aclError
         )!
+        if aclError != nil {
+            print("ACL error: \(String(describing: aclError))")
+        }
         let tag = name.data(using: .utf8)!
         let attributes: [String: Any] = [
             kSecClass as String                     : kSecClassKey,

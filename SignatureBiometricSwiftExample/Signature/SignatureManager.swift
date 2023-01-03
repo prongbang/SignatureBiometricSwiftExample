@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SignatureManager {
-    func sign(algorithm: SecKeyAlgorithm, data: Data) -> String?
-    func sign(message: String) -> String?
+    func sign(algorithm: SecKeyAlgorithm, data: Data) -> SignatureResult
+    func sign(message: String) -> SignatureResult
     func verify(message: String, signature: String) -> Bool
 }

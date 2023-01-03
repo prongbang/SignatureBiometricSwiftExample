@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct KeyConfig {
-    var name: String
+public struct KeyConfig {
+    public var name: String = ""
+    
+    public init(name: String) {
+        self.name = name
+    }
 }

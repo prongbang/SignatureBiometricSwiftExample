@@ -28,6 +28,9 @@
 		9FEC7475295549AE008C4CC4 /* SignatureBiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7474295549AE008C4CC4 /* SignatureBiometricManager.swift */; };
 		9FEC7477295549EE008C4CC4 /* LocalSignatureBiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC7476295549EE008C4CC4 /* LocalSignatureBiometricManager.swift */; };
 		9FEC747929556D61008C4CC4 /* KeyPairResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC747829556D61008C4CC4 /* KeyPairResult.swift */; };
+		9FECD3EE29640DE900C9F023 /* SignatureResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECD3ED29640DE900C9F023 /* SignatureResult.swift */; };
+		9FECD3F02964162E00C9F023 /* SignatureBiometricStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECD3EF2964162E00C9F023 /* SignatureBiometricStatus.swift */; };
+		9FECD3F22964167C00C9F023 /* VerifyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECD3F12964167C00C9F023 /* VerifyResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,10 @@
 		9FEC7474295549AE008C4CC4 /* SignatureBiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBiometricManager.swift; sourceTree = "<group>"; };
 		9FEC7476295549EE008C4CC4 /* LocalSignatureBiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSignatureBiometricManager.swift; sourceTree = "<group>"; };
 		9FEC747829556D61008C4CC4 /* KeyPairResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairResult.swift; sourceTree = "<group>"; };
+		9FECD3EC295E908900C9F023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9FECD3ED29640DE900C9F023 /* SignatureResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureResult.swift; sourceTree = "<group>"; };
+		9FECD3EF2964162E00C9F023 /* SignatureBiometricStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBiometricStatus.swift; sourceTree = "<group>"; };
+		9FECD3F12964167C00C9F023 /* VerifyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +129,7 @@
 		9FEC742E295431AE008C4CC4 /* SignatureBiometricSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				9FECD3EC295E908900C9F023 /* Info.plist */,
 				9FEC7476295549EE008C4CC4 /* LocalSignatureBiometricManager.swift */,
 				9FEC7474295549AE008C4CC4 /* SignatureBiometricManager.swift */,
 				9FEC746B29543A9B008C4CC4 /* Extensions */,
@@ -132,6 +140,7 @@
 				9FEC7431295431AE008C4CC4 /* ContentView.swift */,
 				9FEC7433295431AF008C4CC4 /* Assets.xcassets */,
 				9FEC7435295431AF008C4CC4 /* Preview Content */,
+				9FECD3EF2964162E00C9F023 /* SignatureBiometricStatus.swift */,
 			);
 			path = SignatureBiometricSwiftExample;
 			sourceTree = "<group>";
@@ -187,6 +196,8 @@
 			children = (
 				9FEC7467295438FE008C4CC4 /* SignatureManager.swift */,
 				9FEC7469295439EA008C4CC4 /* BiometricSignatureManager.swift */,
+				9FECD3ED29640DE900C9F023 /* SignatureResult.swift */,
+				9FECD3F12964167C00C9F023 /* VerifyResult.swift */,
 			);
 			path = Signature;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FECD3F02964162E00C9F023 /* SignatureBiometricStatus.swift in Sources */,
 				9FEC7432295431AE008C4CC4 /* ContentView.swift in Sources */,
 				9FEC746D29543AB4008C4CC4 /* DispatchQueue+Extension.swift in Sources */,
 				9FEC747929556D61008C4CC4 /* KeyPairResult.swift in Sources */,
@@ -344,7 +356,9 @@
 				9FEC745E2954353D008C4CC4 /* KeychainAccessManager.swift in Sources */,
 				9FEC7475295549AE008C4CC4 /* SignatureBiometricManager.swift in Sources */,
 				9FEC746F29544904008C4CC4 /* Data+Extensions.swift in Sources */,
+				9FECD3F22964167C00C9F023 /* VerifyResult.swift in Sources */,
 				9FEC747129545051008C4CC4 /* KeyPair.swift in Sources */,
+				9FECD3EE29640DE900C9F023 /* SignatureResult.swift in Sources */,
 				9FEC7468295438FE008C4CC4 /* SignatureManager.swift in Sources */,
 				9FEC746529543637008C4CC4 /* KeyPairManager.swift in Sources */,
 			);
@@ -508,7 +522,8 @@
 				DEVELOPMENT_TEAM = 3ATXW43MG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(MARKETING_VERSION)";
+				INFOPLIST_FILE = SignatureBiometricSwiftExample/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = 1.0;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -538,7 +553,8 @@
 				DEVELOPMENT_TEAM = 3ATXW43MG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(MARKETING_VERSION)";
+				INFOPLIST_FILE = SignatureBiometricSwiftExample/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = 1.0;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
